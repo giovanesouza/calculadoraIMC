@@ -2,53 +2,97 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.container {
+    background-color: #212529;
+    color: #fff;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    width: 100%;
-    background-color: rgb(116, 153, 153);
-
+    align-items: center;
 }
 
-form {
+
+.calculadoraIMC {
+    width: auto;
+    height: auto;
+
+    background-color: #293746;
+    box-shadow: 0 0 2px 2px #fff;
     display: flex;
     flex-direction: column;
-    margin: 10% 0 10% 0;
+    padding: 4%;
+
+    text-align: center;
+
 }
 
 h2 {
-    margin: 10% 0 10% 0;
-   color: #fff;
+    margin-bottom: 5%;
+
+
 }
 
 input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
+    padding: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+
+
 }
 
 button {
-    margin-bottom: 10px;
-    padding: 10px;
+    background-color: #5bc515b0;
+    color: #fff;
+    padding: 5%;
+    margin-bottom: 10%;
+    font-size: 24px;
+
     border: none;
+    box-shadow: 0 0 5px 2px #fff;
 }
 
-.space-between {
-    background-color: rgb(157, 235, 235);
-    display: flex;
-    justify-content: center;
+button:hover {
+    background-color: #5cc515;
+    cursor: pointer;
+
 }
 
-p {
-    font-weight: bold;
+.imc {
+    background-color: #212529;
+    padding: 2%;
 }
 
 #resultado {
-    margin-left: 10px;
+    background-color: #fff;
+    color: #212529;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5%;
+}
+
+#resultado::after {
+    content: ' kg/m²';
+}
+
+
+.titulo-classificacao {
+    background-color: #465f59;
+    padding: 2%;
+}
+
+#classificacao {
+    background-color: #fff;
+    color: #212529;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5%;
 }
