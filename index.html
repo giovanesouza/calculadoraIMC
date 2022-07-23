@@ -14,34 +14,182 @@
 
 <body>
 
+    <div class="container">
 
-    <div class="calculadoraIMC">
+        <!-- CALCULADORA -->
 
-        <h2> CALCULADORA DE IMC </h2>
+        <div class="item calculadora">
 
-        <input type="number" id="peso" placeholder="Digite seu peso atual" required="">
+            <div class="calculadoraIMC">
+                
+                <h2> CALCULADORA DE IMC </h2>
 
-        <input type="number" id="est" placeholder="Digite sua estatura" required="">
+                <input type="number" id="idade" placeholder="Digite sua idade (anos)" required>
 
-        <button onclick="calculoImc()">Calcular</button>
+                <input type="number" id="peso" placeholder="Digite seu peso atual (kg)" required="">
+
+                <input type="number" id="est" placeholder="Digite sua estatura (m)" required="">
+
+                <button class="calcular" onclick="calculoImc()">Calcular</button>
 
 
-            <p class="imc"> <strong> IMC (Índice de Massa Corporal) </strong> </p>
-            <div id="resultado"></div>
+                <p class="imc"> <strong> IMC (Índice de Massa Corporal) </strong> </p>
+                <div id="resultado">0.00</div>
 
 
-            <p class="titulo-classificacao"> <strong> CLASSIFICAÇÃO: </strong> </p>
-            <div id="classificacao"></div>
+                <p class="classificacao"> <strong> CLASSIFICAÇÃO: </strong> </p>
+
+                <div id="classificacao-resultado-calc"></div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DESCRIÇÃO DO RESULTADO -->
+        <div class="item descricao">
+
+            <p>
+                DESCRIÇÃO DO RESULTADO - EM BREVE!
+            </p>
+        </div>
+
+
+        <!-- PESO IDEAL -->
+        <div class="item peso-ideal">
+
+            <h2>Peso Ideal Médio </h2>
+
+            <p style="text-align: justify; margin-top: 2%">Para saber o seu   <strong>PESO IDEAL MÉDIO</strong>, é necessário ter preenchido os campos: <strong>IDADE e ESTATURA.</strong></p>
+
+            <p id="pesoI"></p>
+
+            <button class="verificar_PI" onclick="pesoIdeal()">Clique aqui para verificar</button>
+
+        </div>
+
+
+
+        <!-- LOGO IMC -->
+        <div class="item img-imc">
+
+            <img src="img/bmi.png" alt="icon-IMC">
+
+        </div>
+
 
 
     </div>
 
 
 
+    <!-- TABELAS COM CLASSIFICAÇÃO - ADULTO / IDOSO
+
+                    == ADULTO ==
+                <table>
+
+                    <tr">
+                        <th colspan="3">
+                            CLASSIFICAÇÃO - ADULTO
+                        </th>
+                    </tr>
+
+
+                    <tr">
+                        <td> Baixo peso </td>
+                        <td colspan="2"> &#60; 18.5 Kg/m² </td>
+
+                    </tr>
+
+                    <tr>
+                        <td> Eutrofia </td>
+                        <td> 18.5 Kg/m² </td>
+                        <td> 24.9 Kg/m² </td>
+                    </tr>
+
+                    <tr>
+                        <td> Sobrepeso </td>
+                        <td> 25 Kg/m² </td>
+                        <td> 29.9Kg/m² </td>
+                    </tr>
+
+                    <tr>
+                        <td> Obesidade grau 1 </td>
+                        <td> 30 Kg/m² </td>
+                        <td> 34.9Kg/m² </td>
+                    </tr>
+
+                    <tr>
+                        <td> Obesidade grau 2 </td>
+                        <td> 35 Kg/m² </td>
+                        <td> 39.9Kg/m² </td>
+                    </tr>
+
+                    <tr>
+                        <td> Obesidade Mórbida </td>
+                        <td colspan="
+                2"> &#62; 40 Kg/m² </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="3"> <strong>Fonte: </strong> WHO (1995), WHO (1997).</td>
+                    </tr>
+
+                </table>
 
 
 
 
+                == IDOSO ==
+
+                <table>
+
+                    <tr>
+                        <th colspan="3">
+                            CLASSIFICAÇÃO - IDOSO
+                        </th>
+                    </tr>
+
+
+                    <tr>
+                        <td> Baixo peso </td>
+                        <td colspan="2"> &#60; 23 Kg/m² </td>
+
+                    </tr>
+
+
+
+                    <tr>
+                        <td> Peso Normal </td>
+                        <td> 23 Kg/m² </td>
+                        <td> &#60; 28 Kg/m² </td>
+                    </tr>
+
+                    <tr>
+                        <td> Sobrepeso </td>
+                        <td> &ge; 28 Kg/m² </td>
+                        <td> &#60; 30 kg/m² </td>
+                    </tr>
+
+                    <tr>
+                        <td> Obesidade </td>
+                        <td colspan="
+                2"> &ge; 30 Kg/m² </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="3"> <strong>Fonte: </strong> OPAS (2002). </td>
+                    </tr>
+
+                </table>
+
+ -->
 
 
 
