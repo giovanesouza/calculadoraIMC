@@ -51,6 +51,7 @@ function classificacaoAdulto() {
 
         document.getElementById("descricao").style.backgroundColor = "#6DB5E8";
 
+        document.querySelector(".desc-adulto-bp").style.display = "block";
 
 
     } else if (imc >= 18.5 && imc < 25) {
@@ -60,6 +61,8 @@ function classificacaoAdulto() {
 
         document.getElementById("descricao").style.backgroundColor = "#7FC494";
 
+        document.querySelector(".desc-adulto-normal").style.display = "block";
+
 
     } else if (imc >= 25 && imc < 30) {
         document.getElementById("classificacao-resultado").innerText = "Sobrepeso.";
@@ -67,6 +70,8 @@ function classificacaoAdulto() {
         document.getElementById("classificacao-resultado").style.backgroundColor = "#F8E551";
 
         document.getElementById("descricao").style.backgroundColor = "#F8E551";
+
+        document.querySelector(".desc-adulto-sp").style.display = "block";
 
 
     } else if (imc >= 30 && imc < 35) {
@@ -76,6 +81,8 @@ function classificacaoAdulto() {
 
         document.getElementById("descricao").style.backgroundColor = "#FFA728";
 
+        document.querySelector(".desc-adulto-obI").style.display = "block";
+
 
     } else if (imc >= 35 && imc < 40) {
         document.getElementById("classificacao-resultado").innerText = "Obesidade grau II.";
@@ -84,6 +91,8 @@ function classificacaoAdulto() {
 
         document.getElementById("descricao").style.backgroundColor = "#FC6F41";
 
+        document.querySelector(".desc-adulto-obII").style.display = "block";
+
 
     } else if (imc >= 40) {
         document.getElementById("classificacao-resultado").innerText = "Obesidade grau III / Mórbida.";
@@ -91,6 +100,8 @@ function classificacaoAdulto() {
         document.getElementById("classificacao-resultado").style.backgroundColor = "#DC4E53";
 
         document.getElementById("descricao").style.backgroundColor = "#DC4E53";
+
+        document.querySelector(".desc-adulto-morbida").style.display = "block";
 
     }
 
@@ -109,7 +120,7 @@ function classificacaoIdoso() {
         document.getElementById("classificacao-resultado").style.backgroundColor = "#6DB5E8";
 
         document.getElementById("descricao").style.backgroundColor = "#6DB5E8";
-        
+
 
     } else if (imc >= 23 && imc < 28) {
         document.getElementById("classificacao-resultado").innerText = "Peso normal.";
@@ -138,7 +149,6 @@ function classificacaoIdoso() {
 
 
 }
-
 
 
 // FUNÇÃO PARA CÁLCULO DE PESO IDEAL (MÉDIO)

@@ -33,6 +33,7 @@ body {
 }
 
 .calculadora {
+
     grid-row: 1 / 3;
 
     box-shadow: 0 0 2px 2px #fff;
@@ -46,7 +47,9 @@ body {
     background-color: #ffffff;
     color: #212529;
 
+    text-align: justify;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -159,6 +162,19 @@ button.calcular:hover {
     margin-bottom: 5%;
 }
 
+
+/* INÍCIO - TEXTOS DESCRIÇÃO POR CLASSIFICACAÇÃO */
+
+.desc-adulto-bp, .desc-adulto-normal, .desc-adulto-sp, .desc-adulto-obI, .desc-adulto-obII, .desc-adulto-morbida  {
+
+    display: none;
+}
+
+/* FIM - TEXTOS DESCRIÇÃO POR CLASSIFICACAÇÃO */
+
+
+
+
 /* FIM CALCULADORA */
 
 
@@ -202,7 +218,7 @@ button.verificar_PI:hover {
 
     .container {
 
-        gap: 10px;
+        gap: 0;
         padding: 10px;
 
         display: grid;
@@ -234,6 +250,8 @@ button.verificar_PI:hover {
     .descricao {
         grid-row: 3 / 4;
         grid-column: 1 / 2;
+
+        margin-top: 10px;
 
 
     }

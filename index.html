@@ -21,7 +21,7 @@
         <div class="item calculadora">
 
             <div class="calculadoraIMC">
-                
+
                 <h2> CALCULADORA DE IMC </h2>
 
                 <input type="number" id="idade" placeholder="Digite sua idade (anos)" required>
@@ -51,9 +51,47 @@
         <!-- DESCRIÇÃO DO RESULTADO -->
         <div class="item descricao" id="descricao">
 
-            <p>
-                DESCRIÇÃO DO RESULTADO - EM BREVE!
+
+            <!-- ADULTO -->
+            <p class="desc-adulto-bp">
+                Mediante resultado de IMC, você encontra-se em <strong> BAIXO PESO, </strong> podendo ter risco de
+                <strong> doença NORMAL</strong> ou <strong>ELEVADO</strong>.
             </p>
+
+            <p class="desc-adulto-normal">
+                Mediante resultado de IMC, você encontra-se em <strong> EUTROFIA (PESO ADEQUADO PARA SUA ALTURA), </strong> podendo ter risco de
+                <strong> doença NORMAL</strong>.
+            </p>
+
+            <p class="desc-adulto-sp">
+                Mediante resultado de IMC, você encontra-se em <strong> SOBREPESO, </strong> podendo ter risco de
+                <strong> doença POUCO ELEVADO</strong>.
+                <strong>Fonte:</strong> World Health Organization.
+            </p>
+
+            <p class="desc-adulto-obI">
+                Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAU I, </strong> podendo ter risco de
+                <strong> doença ELEVADO</strong>.
+                <strong>Fonte:</strong> World Health Organization.
+            </p>
+
+            <p class="desc-adulto-obII">
+                Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE  GRAU II, </strong> podendo ter risco de
+                <strong> doença MUITO ELEVADO</strong>.
+                <strong>Fonte:</strong> World Health Organization.
+            </p>
+
+            <p class="desc-adulto-morbida">
+                Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAVE, </strong> podendo ter risco de
+                <strong> doença MUITÍSSIMO ELEVADO</strong>.
+                <strong>Fonte:</strong> World Health Organization.
+            </p>
+
+
+            <!-- ADULTO IDOSO-->
+
+
+
         </div>
 
 
@@ -62,7 +100,8 @@
 
             <h2>Peso Ideal Médio </h2>
 
-            <p style="text-align: justify; margin-top: 2%">Para saber o seu   <strong>PESO IDEAL MÉDIO</strong>, é necessário ter preenchido os campos: <strong>IDADE e ESTATURA.</strong></p>
+            <p style="text-align: justify; margin-top: 2%">Para saber o seu <strong>PESO IDEAL MÉDIO</strong>, é
+                necessário ter preenchido os campos: <strong>IDADE e ESTATURA.</strong></p>
 
             <p id="pesoI"></p>
 
