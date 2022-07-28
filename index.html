@@ -24,11 +24,14 @@
 
                 <h2> CALCULADORA DE IMC </h2>
 
-                <input type="number" id="idade" placeholder="Digite sua idade (anos)" required>
+                <input type="text" id="idade" placeholder="Digite sua idade (anos)" minlength="2" maxlength="3"
+                    required>
 
-                <input type="number" id="peso" placeholder="Digite seu peso atual (kg)" required="">
+                <input type="text" id="peso" placeholder="Digite seu peso atual (kg)" minlength="2" maxlength="5"
+                    required="">
 
-                <input type="number" id="est" placeholder="Digite sua estatura (m)" required="">
+                <input type="text" id="est" placeholder="Digite sua estatura (m)" minlength="3" maxlength="4"
+                    required="">
 
                 <button class="calcular" onclick="calculoImc()">Calcular</button>
 
@@ -51,41 +54,59 @@
         <!-- DESCRIÇÃO DO RESULTADO -->
         <div class="item descricao" id="descricao">
 
+        
 
             <!-- ADULTO -->
-            <p class="desc-adulto-bp">
-                Mediante resultado de IMC, você encontra-se em <strong> BAIXO PESO, </strong> podendo ter risco de
-                <strong> doença NORMAL</strong> ou <strong>ELEVADO</strong>.
-            </p>
+            <div class="desc-adulto-bp">
+                <p>
+                    Mediante resultado de IMC, você encontra-se em <strong> BAIXO PESO, </strong> podendo ter <strong>
+                        risco de doença NORMAL ou ELEVADO</strong> - a depender do grau de magreza.
+                </p>
+                <p><strong>Fonte:</strong> World Health Organization.</p>
+            </div>
 
-            <p class="desc-adulto-normal">
-                Mediante resultado de IMC, você encontra-se em <strong> EUTROFIA (PESO ADEQUADO PARA SUA ALTURA), </strong> podendo ter risco de
-                <strong> doença NORMAL</strong>.
-            </p>
+            <div class="desc-adulto-normal">
+                <p>
+                    Mediante resultado de IMC, você encontra-se em <strong> EUTROFIA (PESO ADEQUADO PARA SUA
+                        ALTURA)</strong>, podendo ter <strong>risco de doença NORMAL</strong>.
+                </p>
+                <p><strong>Fonte:</strong> World Health Organization.</p>
+            </div>
 
-            <p class="desc-adulto-sp">
-                Mediante resultado de IMC, você encontra-se em <strong> SOBREPESO, </strong> podendo ter risco de
-                <strong> doença POUCO ELEVADO</strong>.
-                <strong>Fonte:</strong> World Health Organization.
-            </p>
+            <div class="desc-adulto-sp">
+                <p>
+                    Mediante resultado de IMC, você encontra-se em <strong> SOBREPESO, </strong> podendo ter risco de
+                    <strong> doença POUCO ELEVADO</strong>.
+                </p>
+                <p><strong>Fonte:</strong> World Health Organization.</p>
+            </div>
 
-            <p class="desc-adulto-obI">
-                Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAU I, </strong> podendo ter risco de
-                <strong> doença ELEVADO</strong>.
-                <strong>Fonte:</strong> World Health Organization.
-            </p>
+            <div class="desc-adulto-obI">
+                <p>
+                    Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAU I, </strong> podendo ter
+                    <strong>risco de
+                        doença ELEVADO</strong>.
+                </p>
+                <p><strong>Fonte:</strong> World Health Organization.</p>
+            </div>
 
-            <p class="desc-adulto-obII">
-                Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE  GRAU II, </strong> podendo ter risco de
-                <strong> doença MUITO ELEVADO</strong>.
-                <strong>Fonte:</strong> World Health Organization.
-            </p>
+            <div class="desc-adulto-obII">
+                <p>
+                    Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAU II, </strong> podendo ter
+                    <strong>risco de doença MUITO ELEVADO</strong>.
+                </p>
+                <p><strong>Fonte:</strong> World Health Organization.</p>
+            </div>
 
-            <p class="desc-adulto-morbida">
-                Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAVE, </strong> podendo ter risco de
-                <strong> doença MUITÍSSIMO ELEVADO</strong>.
-                <strong>Fonte:</strong> World Health Organization.
-            </p>
+            <div class="desc-adulto-morbida">
+                <p>
+                    Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAVE, </strong> podendo ter
+                    <strong> risco
+                        de
+                        doença MUITÍSSIMO ELEVADO</strong>.
+                </p>
+                <p><strong>Fonte:</strong> World Health Organization.</p>
+            </div>
 
 
             <!-- ADULTO IDOSO-->
