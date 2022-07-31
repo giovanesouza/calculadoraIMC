@@ -10,13 +10,13 @@
 body {
     background-color: #212529;
     color: #fff;
-    margin: 3%;
 
 }
 
 
 .container {
     background-color: #293746;
+
 
     gap: 10px;
     padding: 10px;
@@ -48,10 +48,11 @@ body {
     color: #212529;
 
     text-align: justify;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+
 
 }
 
@@ -148,26 +149,44 @@ button.calcular:hover {
 
 
 
+
 .classificacao {
-    background-color: #465F59;
+    background-color: #fff;
+    color: #465F59;
+
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2%;
     padding: 2%;
 }
 
-#classificacao-resultado {
-
-    color: #000;
-    font-weight: bold;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 5%;
-}
 
 
 /* INÍCIO - TEXTOS DESCRIÇÃO POR CLASSIFICACAÇÃO */
 
-.desc-adulto-bp, .desc-adulto-normal, .desc-adulto-sp, .desc-adulto-obI, .desc-adulto-obII, .desc-adulto-morbida  {
+.desc-adulto-bp,
+.desc-adulto-normal,
+.desc-adulto-sp,
+.desc-adulto-obI,
+.desc-adulto-obII,
+.desc-adulto-morbida,
+.desc-idoso-bp,
+.desc-idoso-normal,
+.desc-idoso-sp,
+.desc-idoso-ob {
 
     display: none;
+
+}
+
+.desc-adulto-obII,
+.desc-adulto-morbida {
+    color: #fff;
+}
+
+/* Fonte para consulta IMC */
+.fonte {
+    margin-top: 1rem;
 }
 
 /* FIM - TEXTOS DESCRIÇÃO POR CLASSIFICACAÇÃO */
@@ -235,7 +254,7 @@ button.verificar_PI:hover {
         clip-path: none;
         box-shadow: 0 0 2px 2px;
 
-           
+
 
     }
 

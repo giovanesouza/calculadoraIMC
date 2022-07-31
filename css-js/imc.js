@@ -34,7 +34,7 @@ function calculoImc() {
 }
 
 
-// CLASSIFICAÇÃO POR FAIXA ETÁRIA - ADULTO/IDOSO
+// CLASSIFICAÇÃO POR FAIXA ETÁRIA - ADULTO
 
 function classificacaoAdulto() {
 
@@ -43,70 +43,69 @@ function classificacaoAdulto() {
 
     let imc = peso / estatura ** 2;
 
+
+    // BAIXO PESO
+
     if (imc < 18.5) {
 
-        document.getElementById("classificacao-resultado").innerText = "Baixo peso.";
+        limparDescricao();
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#6DB5E8";
+        document.querySelector('.desc-adulto-bp').style.display = "block";
 
         document.getElementById("descricao").style.backgroundColor = "#6DB5E8";
 
-        document.querySelector(".desc-adulto-bp").style.display = "block";
 
-
+    //EUTROFIA
     } else if (imc >= 18.5 && imc < 25) {
-        document.getElementById("classificacao-resultado").innerText = "Eutrofia.";
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#7FC494";
+        limparDescricao();
+
+        document.querySelector('.desc-adulto-normal').style.display = "block";
 
         document.getElementById("descricao").style.backgroundColor = "#7FC494";
 
-        document.querySelector(".desc-adulto-normal").style.display = "block";
 
-
+    // SOBREPESO
     } else if (imc >= 25 && imc < 30) {
-        document.getElementById("classificacao-resultado").innerText = "Sobrepeso.";
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#F8E551";
+        limparDescricao();
 
+        document.querySelector('.desc-adulto-sp').style.display = "block";
         document.getElementById("descricao").style.backgroundColor = "#F8E551";
 
-        document.querySelector(".desc-adulto-sp").style.display = "block";
 
-
+    // OBESIDADE I
     } else if (imc >= 30 && imc < 35) {
-        document.getElementById("classificacao-resultado").innerText = "Obesidade grau I.";
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#FFA728";
+        limparDescricao();
 
+        document.querySelector('.desc-adulto-obI').style.display = "block";
         document.getElementById("descricao").style.backgroundColor = "#FFA728";
 
-        document.querySelector(".desc-adulto-obI").style.display = "block";
 
-
+    // OBESIDADE II
     } else if (imc >= 35 && imc < 40) {
-        document.getElementById("classificacao-resultado").innerText = "Obesidade grau II.";
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#FC6F41";
+        limparDescricao();
 
+        document.querySelector('.desc-adulto-obII').style.display = "block";
         document.getElementById("descricao").style.backgroundColor = "#FC6F41";
 
-        document.querySelector(".desc-adulto-obII").style.display = "block";
 
-
+    // OBESIDADE MÓRBIDA
     } else if (imc >= 40) {
-        document.getElementById("classificacao-resultado").innerText = "Obesidade grau III / Mórbida.";
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#DC4E53";
+        limparDescricao();
 
+        document.querySelector('.desc-adulto-morbida ').style.display = "block";
         document.getElementById("descricao").style.backgroundColor = "#DC4E53";
-
-        document.querySelector(".desc-adulto-morbida").style.display = "block";
 
     }
 
 }
 
+
+// CLASSIFICAÇÃO POR FAIXA ETÁRIA - IDOSO
 function classificacaoIdoso() {
 
     let peso = document.getElementById("peso").value;
@@ -114,41 +113,67 @@ function classificacaoIdoso() {
 
     let imc = peso / estatura ** 2;
 
-    if (imc < 23) {
-        document.getElementById("classificacao-resultado").innerText = "Baixo peso.";
+    if (imc < 23) {     
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#6DB5E8";
+        limparDescricao();
 
-        document.getElementById("descricao").style.backgroundColor = "#6DB5E8";
+        document.querySelector('.desc-idoso-bp').style.display = "block";
+        document.getElementById("descricao").style.backgroundColor = "#6DB5E8";   
 
 
     } else if (imc >= 23 && imc < 28) {
-        document.getElementById("classificacao-resultado").innerText = "Peso normal.";
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#7FC494";
+        limparDescricao();
 
-        document.getElementById("descricao").style.backgroundColor = "#7FC494";
+        document.querySelector('.desc-idoso-normal').style.display = "block";
+        document.getElementById("descricao").style.backgroundColor = "#7FC494";   
+
 
 
     } else if (imc >= 28 && imc < 30) {
-        document.getElementById("classificacao-resultado").innerText = "Sobrepeso.";
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#F8E551";
+        limparDescricao();
 
-        document.getElementById("descricao").style.backgroundColor = "#F8E551";
+        document.querySelector('.desc-idoso-sp').style.display = "block";
+        document.getElementById("descricao").style.backgroundColor = "#F8E551";   
+
 
 
     } else if (imc >= 30) {
-        document.getElementById("classificacao-resultado").innerText = "Obesidade.";
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#FC6F41";
 
-        document.getElementById("descricao").style.backgroundColor = "#FC6F41";
+        limparDescricao();
 
+        document.querySelector('.desc-idoso-ob').style.display = "block";
+        document.getElementById("descricao").style.backgroundColor = "#FC6F41";   
+
+        
     }
 
 
 }
+
+
+
+// DESCRIÇÃO
+
+
+function limparDescricao() {
+    document.querySelector('.desc-adulto-bp').style.display = "none";
+    document.querySelector('.desc-adulto-normal').style.display = "none";
+    document.querySelector('.desc-adulto-sp').style.display = "none";
+    document.querySelector('.desc-adulto-obI').style.display = "none";
+    document.querySelector('.desc-adulto-obII').style.display = "none";
+    document.querySelector('.desc-adulto-morbida').style.display = "none";
+
+
+    document.querySelector('.desc-idoso-bp').style.display = "none";
+    document.querySelector('.desc-idoso-normal').style.display = "none";
+    document.querySelector('.desc-idoso-sp').style.display = "none";
+    document.querySelector('.desc-idoso-ob').style.display = "none";
+
+}
+
 
 
 // FUNÇÃO PARA CÁLCULO DE PESO IDEAL (MÉDIO)
