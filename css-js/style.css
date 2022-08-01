@@ -7,130 +7,177 @@
 }
 
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     background-color: #212529;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #fff;
 
 }
 
+/* ÁREA BEM VINDO */
 
-.container {
-    background-color: #293746;
-
-
-    gap: 10px;
-    padding: 10px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-}
-
-
-.item {
-    padding: 10px;
-
-}
-
-.calculadora {
-
-    grid-row: 1 / 3;
-
-    box-shadow: 0 0 2px 2px #fff;
-}
-
-
-.descricao {
-    grid-row: 1 / 2;
-    grid-column: 2 / 4;
-
-    background-color: #ffffff;
-    color: #212529;
-
-    text-align: justify;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-
-
-}
-
-
-.peso-ideal {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-
+.bem-vindo {
+    background-color: #56D1B5;
+    /* background-color: #17A481; */
     text-align: center;
+    height: 100%;
 }
 
-.img-imc {
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
+img {
+    max-width: 80%;
+}
 
+.bem-vindo h1 {
+    margin: 10px 0;
+    color: #293746;
+}
+
+.bem-vindo p {
+    line-height: 30px;
+    color: #293746;
+}
+
+.bem-vindo button {
+    padding: 10px;
+    margin: 40px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 16px;
+
+
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.bem-vindo button:hover {
+    background-color: #18916E;
+    color: #fff;
+
+
+}
+
+
+/* ÁRE BEM VINDO */
+
+
+
+/* ÁREA CALCULADORA IMC */
+
+#calculatorImc {
+    background-color: #17A481;
+    text-align: center;
+    height: auto;
 
     display: flex;
-    justify-content: center;
+
+}
+
+
+.col-left {
+    width: 50%;
+}
+
+.col-right {
+
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
 
-    background-color: #465F59;
-    clip-path: ellipse(50% 80%);
-
 }
 
 
-/* INÍCIO CALCULADORA */
 
-.calculadoraIMC {
-    background-color: #293746;
-    width: auto;
 
+form {
+    /* background-color: #465F59; */
+    width: 100%;
 
     display: flex;
     flex-direction: column;
-
-
-    text-align: center;
+    align-items: center;
 
 }
 
-.calculadoraIMC h2 {
-    font-size: 20px;
-    margin-bottom: 5%;
+form h2 {
+    margin: 15px;
 }
 
 input {
-    padding: 5%;
-    margin-bottom: 5%;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 16px;
     font-weight: bold;
     outline: none;
 
-
 }
 
 
-button.calcular {
-    background-color: #5bc515b0;
-    text-transform: uppercase;
+.calcular {
+    background-color: #19A37F;
     color: #fff;
-    padding: 2%;
-    margin-bottom: 10%;
+
+
     font-size: 16px;
 
-    border: none;
-    box-shadow: 0 0 2px 2px #fff;
-}
-
-button.calcular:hover {
-    background-color: #5cc515;
+    border: 1px solid;
+    border-radius: 10px;
     cursor: pointer;
+    transition: all .2s;
+}
+
+.calcular:hover {
+    background-color: #58D1B2;
+    color: #293746;
+
 
 }
 
-.imc {
+
+.reset {
+    background-color: #E24E4E;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+
+    font-size: 16px;
+}
+
+.reset:hover {
+    background-color: #be0c0c;
+}
+
+/* ÁREA CALCULADORA IMC */
+
+
+
+/* INÍCIO ÁREA RESULTADO */
+
+.resultado {
+    /* background-color: #56D1B5; */
+    width: 100%;
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.imcTitulo {
     background-color: #212529;
+    width: 80%;
     padding: 2%;
 }
 
@@ -138,7 +185,7 @@ button.calcular:hover {
     background-color: #fff;
     color: #212529;
     font-weight: bold;
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 5%;
 }
@@ -148,16 +195,33 @@ button.calcular:hover {
 }
 
 
+/* FIM ÁREA RESULTADO */
+
+
+
+/* INÍCIO CLASSIFICACÃO */
+
+#descricao {
+
+    width: 80%;
+    padding: 15px;
+    text-align: justify;
+
+    background-color: #ffffff;
+    color: #212529;
+}
+
+
 
 
 .classificacao {
     background-color: #fff;
-    color: #465F59;
+    color: #293746;
 
-    width: 100%;
+    width: 80%;
     text-align: center;
-    margin-bottom: 2%;
-    padding: 2%;
+    margin-top: 15px;
+    padding: 10px;
 }
 
 
@@ -177,6 +241,7 @@ button.calcular:hover {
 
     display: none;
 
+
 }
 
 .desc-adulto-obII,
@@ -184,37 +249,93 @@ button.calcular:hover {
     color: #fff;
 }
 
-/* Fonte para consulta IMC */
-.fonte {
-    margin-top: 1rem;
-}
+
 
 /* FIM - TEXTOS DESCRIÇÃO POR CLASSIFICACAÇÃO */
 
 
 
-
-/* FIM CALCULADORA */
-
+/* FIM CLASSIFICACÃO */
 
 
 
 
-/* ÁREA - PESO IDEAL */
+/* INÍCIO ÁREA PESO IDEAL */
 
-p#pesoI {
+#calculatorPesoIdeal {
+    background-color: #ffffff;
+    color: #212529;
 
-    margin-top: 5%;
+
+    display: flex;
+
+}
+
+
+.pesoIdeal {
+
+    margin: 15px 0;
+    text-align: center;
+}
+
+.text-justify {
+    margin: 15px;
+    padding: 10px;
+    text-align: justify;
+}
+
+
+.col-right-ideal {
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+#pesoMinI,
+#pesoMedI,
+#pesoMaxI,
+#alerta {
+    height: auto;
+    width: 80%;
+    padding: 1rem;
+    margin-top: 0.6rem;
+    color: #212529;
+    text-align: center;
+
+    font-weight: bold;
+
+    /* display: none; */
+}
+
+#alerta {
+    background-color: #ffff00;
+    color: #292921;
+}
+
+#pesoMinI {
+    background-color: #6DB5E8;
+}
+
+#pesoMedI {
+    background-color: #7FC494;
+}
+
+#pesoMaxI {
+    background-color: #F8E551;
 }
 
 
 
 button.verificar_PI {
-    text-transform: uppercase;
+
     font-weight: bold;
-    border: none;
+    border: 1px solid;
+    border-radius: 10px;
     padding: 10px;
-    margin-top: 5%;
+    margin: 15px 0;
 
     transition: all .2s;
 }
@@ -227,7 +348,7 @@ button.verificar_PI:hover {
 }
 
 
-/* FIM - PESO IDEAL */
+/* FIM ÁREA PESO IDEAL */
 
 
 
@@ -235,53 +356,56 @@ button.verificar_PI:hover {
 @media only screen and (max-width: 600px) {
 
 
-    .container {
+    /* INÍCIO CALCULADORA IMC E CLASSIFICAÇÃO */
 
-        gap: 0;
-        padding: 10px;
+    #calculatorImc {
 
-        display: grid;
-        grid-template-columns: 1fr;
-
-    }
-
-    .img-imc {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-
-        background-color: #465F59;
-
-        clip-path: none;
-        box-shadow: 0 0 2px 2px;
-
-
+        display: flex;
+        flex-direction: column;
 
     }
 
-    .calculadora {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
+    .col-left {
+        width: 100%;
+    }
 
+    .col-right {
+
+        width: 100%;
+
+        margin-bottom: 15px;
 
     }
 
-
-    .descricao {
-        grid-row: 3 / 4;
-        grid-column: 1 / 2;
-
-        margin-top: 10px;
+    /* FIM CALCULADORA IMC E CLASSIFICAÇÃO */
 
 
-    }
+
+/* PESO IDEAL */
+
+#calculatorPesoIdeal {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.col-right-ideal {
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
 
 
-    .peso-ideal {
-        grid-row: 4 / 5;
-        grid-column: 1 / 2;
+}
 
-        text-align: center;
-    }
+
+.text-justify {
+    margin: 0;
+    text-align: justify;
+}
+
 
 
 

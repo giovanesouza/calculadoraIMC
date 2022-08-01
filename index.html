@@ -14,32 +14,53 @@
 
 <body>
 
-    <div class="container">
+    <section class="bem-vindo">
 
-        <!-- CALCULADORA -->
+            <img src="img/imc.png" alt="img-top-imc">
 
-        <div class="item calculadora">
+        <h1 id="welcome">Olá, nome. Seja bem vindo(a)!</h1>
 
-            <div class="calculadoraIMC">
+        <p> O <strong>Índice de Massa Corporal (IMC)</strong> nada mais é do que a relação entre a Massa Corporal (PESO)
+            dividido pela ESTATURA ao quadrado. </p>
+
+        <p> Essa medida é utilizada a nível internacional e tem como <strong> objetivo verificar se um determinado
+                indivíduo está
+                com peso adequado ou não.</strong></p>
+
+        <a href="#calculatorImc"> <button>Clique aqui para começar</button> </a>
+
+
+    </section>
+
+
+
+    <section id="calculatorImc">
+
+        <div class="col-left">
+
+            <form action="">
 
                 <h2> CALCULADORA DE IMC </h2>
 
                 <input type="text" id="idade" placeholder="Digite sua idade (anos)" minlength="2" maxlength="3"
                     required>
-
                 <input type="text" id="peso" placeholder="Digite seu peso atual (kg)" minlength="2" maxlength="5"
                     required="">
-
                 <input type="text" id="est" placeholder="Digite sua estatura (m)" minlength="3" maxlength="4"
                     required="">
 
-                <button class="calcular" onclick="calculoImc()">Calcular</button>
+                <input class="calcular" onclick="calculoImc()" type="submit" value="CALCULAR">
+
+                <input class="reset" type="reset" value="LIMPAR DADOS">
+
+            </form>
 
 
-                <p class="imc"> <strong> IMC (Índice de Massa Corporal) </strong> </p>
+            <div class="resultado">
+
+                <p class="imcTitulo"> IMC (Índice de Massa Corporal) </p>
+
                 <div id="resultado">0.00</div>
-
-
 
             </div>
 
@@ -47,14 +68,13 @@
 
 
 
-        <!-- DESCRIÇÃO DO RESULTADO - ADULTO / IDOSO -->
-        <div class="item descricao" id="descricao">
+        <div class="col-right">
 
+            <div class="classificacao"> <strong> CLASSIFICAÇÃO: </strong> </div>
 
-                <div class="classificacao"> <strong> CLASSIFICAÇÃO: </strong> </div>
+            <!-- DESCRIÇÃO DO RESULTADO - ADULTO / IDOSO -->
+            <div id="descricao">
 
-
-          
                 <!-- INÍCIO DULTO -->
                 <div class="desc-adulto-bp">
                     <p>
@@ -62,7 +82,7 @@
                         <strong>
                             risco de doença NORMAL ou ELEVADO</strong> - a depender do grau de magreza.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> World Health Organization.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
                 </div>
 
                 <div class="desc-adulto-normal">
@@ -79,7 +99,7 @@
                         de
                         <strong> doença POUCO ELEVADO</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> World Health Organization.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
                 </div>
 
                 <div class="desc-adulto-obI">
@@ -88,7 +108,7 @@
                         <strong>risco de
                             doença ELEVADO</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> World Health Organization.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
                 </div>
 
                 <div class="desc-adulto-obII">
@@ -96,25 +116,27 @@
                         Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAU II, </strong> podendo ter
                         <strong>risco de doença MUITO ELEVADO</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> World Health Organization.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
                 </div>
 
                 <div class="desc-adulto-morbida">
                     <p>
-                        Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAVE/MÓRBIDA, </strong> podendo ter
+                        Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAVE/MÓRBIDA, </strong>
+                        podendo
+                        ter
                         <strong> risco
                             de
                             doença MUITÍSSIMO ELEVADO</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> World Health Organization.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
                 </div>
-            
-
-            <!-- FIM ADULTO-->
 
 
+                <!-- FIM ADULTO-->
 
-            <!-- INÍCIO IDOSO -->
+
+
+                <!-- INÍCIO IDOSO -->
 
                 <div class="desc-idoso-bp">
                     <p>
@@ -148,7 +170,7 @@
                 </div>
 
 
-
+            </div>
             <!-- FIM IDOSO -->
 
 
@@ -156,32 +178,41 @@
         </div>
 
 
-        <!-- PESO IDEAL -->
-        <div class="item peso-ideal">
+    </section>
 
-            <h2>Peso Ideal Médio </h2>
 
-            <p style="text-align: justify; margin-top: 2%">Para saber o seu <strong>PESO IDEAL MÉDIO</strong>, é
-                necessário ter preenchido os campos: <strong>IDADE e ESTATURA.</strong></p>
 
-            <p id="pesoI"></p>
+
+    <section id="calculatorPesoIdeal">
+
+        <div class="col-left pesoIdeal">
+
+            <h2> CALCULE SEU PESO IDEAL </h2>
+
+            <p class="text-justify">Para saber o seu <strong>PESO IDEAL</strong>, é
+                necessário
+                ter preenchido os campos: <strong>IDADE e ESTATURA.</strong></p>
 
             <button class="verificar_PI" onclick="pesoIdeal()">Clique aqui para verificar</button>
 
         </div>
 
+        <div class="col-right-ideal">
 
+            <p id="pesoMinI"></p>
+            <p id="pesoMedI"></p>
+            <p id="pesoMaxI"></p>
+            <p id="alerta"></p>
 
-        <!-- LOGO IMC -->
-        <div class="item img-imc">
-
-            <img src="img/bmi.png" alt="icon-IMC">
+            <p id="pIdeal-atual"></p>
 
         </div>
 
 
 
-    </div>
+    </section>
+
+
 
 
 
