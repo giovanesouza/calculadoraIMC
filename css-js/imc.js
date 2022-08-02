@@ -1,17 +1,21 @@
 
+const nome = prompt("Por favor, digite seu nome: ");
+document.getElementById("welcome").innerHTML = `Olá, ${nome}, Seja bem vindo(a)!`;
+
 
 // FUNÇÃO CALCULAR IMC - PRINCIPAL
 
 function calculoImc() {
 
-    let idade = document.getElementById("idade").value;
+        let idade = document.getElementById("idade").value;
+    
+        let peso = document.getElementById("peso").value;
+        let estatura = document.getElementById("est").value;
+    
+        let imc = peso / estatura ** 2;
+    
+        let resultado = document.getElementById("resultado").innerHTML = imc.toFixed(2);
 
-    let peso = document.getElementById("peso").value;
-    let estatura = document.getElementById("est").value;
-
-    let imc = peso / estatura ** 2;
-
-    let resultado = document.getElementById("resultado").innerHTML = imc.toFixed(2);
 
     if (idade >= 18 && idade < 60) {
 
@@ -55,7 +59,7 @@ function classificacaoAdulto() {
         document.getElementById("descricao").style.backgroundColor = "#6DB5E8";
 
 
-    //EUTROFIA
+        //EUTROFIA
     } else if (imc >= 18.5 && imc < 25) {
 
         limparDescricao();
@@ -65,7 +69,7 @@ function classificacaoAdulto() {
         document.getElementById("descricao").style.backgroundColor = "#7FC494";
 
 
-    // SOBREPESO
+        // SOBREPESO
     } else if (imc >= 25 && imc < 30) {
 
         limparDescricao();
@@ -74,7 +78,7 @@ function classificacaoAdulto() {
         document.getElementById("descricao").style.backgroundColor = "#F8E551";
 
 
-    // OBESIDADE I
+        // OBESIDADE I
     } else if (imc >= 30 && imc < 35) {
 
         limparDescricao();
@@ -83,7 +87,7 @@ function classificacaoAdulto() {
         document.getElementById("descricao").style.backgroundColor = "#FFA728";
 
 
-    // OBESIDADE II
+        // OBESIDADE II
     } else if (imc >= 35 && imc < 40) {
 
         limparDescricao();
@@ -92,7 +96,7 @@ function classificacaoAdulto() {
         document.getElementById("descricao").style.backgroundColor = "#FC6F41";
 
 
-    // OBESIDADE MÓRBIDA
+        // OBESIDADE MÓRBIDA
     } else if (imc >= 40) {
 
         limparDescricao();
@@ -113,12 +117,12 @@ function classificacaoIdoso() {
 
     let imc = peso / estatura ** 2;
 
-    if (imc < 23) {     
+    if (imc < 23) {
 
         limparDescricao();
 
         document.querySelector('.desc-idoso-bp').style.display = "block";
-        document.getElementById("descricao").style.backgroundColor = "#6DB5E8";   
+        document.getElementById("descricao").style.backgroundColor = "#6DB5E8";
 
 
     } else if (imc >= 23 && imc < 28) {
@@ -126,7 +130,7 @@ function classificacaoIdoso() {
         limparDescricao();
 
         document.querySelector('.desc-idoso-normal').style.display = "block";
-        document.getElementById("descricao").style.backgroundColor = "#7FC494";   
+        document.getElementById("descricao").style.backgroundColor = "#7FC494";
 
 
 
@@ -135,7 +139,7 @@ function classificacaoIdoso() {
         limparDescricao();
 
         document.querySelector('.desc-idoso-sp').style.display = "block";
-        document.getElementById("descricao").style.backgroundColor = "#F8E551";   
+        document.getElementById("descricao").style.backgroundColor = "#F8E551";
 
 
 
@@ -145,9 +149,9 @@ function classificacaoIdoso() {
         limparDescricao();
 
         document.querySelector('.desc-idoso-ob').style.display = "block";
-        document.getElementById("descricao").style.backgroundColor = "#FC6F41";   
+        document.getElementById("descricao").style.backgroundColor = "#FC6F41";
 
-        
+
     }
 
 
@@ -171,7 +175,6 @@ function limparDescricao() {
     document.querySelector('.desc-idoso-normal').style.display = "none";
     document.querySelector('.desc-idoso-sp').style.display = "none";
     document.querySelector('.desc-idoso-ob').style.display = "none";
-
 }
 
 
@@ -187,22 +190,69 @@ function pesoIdeal() {
     let est2 = estatura ** 2;
 
 
+
     if (idade >= 18 && idade < 60) {
 
-        let pesoideal = est2 * 21.7;
+        let pesoIdealMinimo = est2 * 18.5;
+        let pesoIdealMedio = est2 * 21.7;
+        let pesoIdealMaximo = est2 * 24.9;
 
-        document.getElementById("pesoI").innerHTML = "Peso ideal: " + pesoideal.toFixed(2) + " kg.";
+        ganharPerderAdulto();
+
+        document.getElementById("pesoMinI").innerHTML = "Peso ideal (mínimo): " + pesoIdealMinimo.toFixed(2) + " kg.";
+
+        document.getElementById("pesoMinI").style.display = "block";
+
+
+        document.getElementById("pesoMedI").innerHTML = "Peso ideal (médio): " + pesoIdealMedio.toFixed(2) + " kg.";
+        document.getElementById("pesoMedI").style.display = "block";
+
+
+        document.getElementById("pesoMaxI").innerHTML = "Peso ideal (máximo): " + pesoIdealMaximo.toFixed(2) + " kg.";
+        document.getElementById("pesoMaxI").style.display = "block";
 
 
     } else if (idade >= 60) {
 
         let pesoideal = est2 * 25.5;
 
-        document.getElementById("pesoI").innerHTML = "Peso ideal: " + pesoideal.toFixed(2) + " kg.";
+        document.getElementById("pesoMedI").innerHTML = "Peso ideal: " + pesoIdealMedio.toFixed(2) + " kg.";
 
-    } else if (idade < 18) {
 
-        document.getElementById("pesoI").innerHTML = "Não é possível calcular o peso ideal para idade informada!";
+    } 
+
+
+}
+
+function ganharPerderAdulto() {
+
+    let peso = document.getElementById("peso").value;
+
+    let estatura = document.getElementById("est").value;
+   
+    let est2 = estatura ** 2;
+
+    let pesoIdealMedio = est2 * 21.7;
+    let diferenca = Math.abs(pesoIdealMedio - peso);
+
+    var diferencaAtualMedio = document.getElementById("diferencaAtualMedio");
+
+
+    if (pesoIdealMedio > peso) {
+        
+        diferencaAtualMedio.innerHTML = `Você precisa <strong>GANHAR</strong> ${diferenca.toFixed(2)} Kg para atingir o seu peso médio ideal.`;
+
+        diferencaAtualMedio.style.backgroundColor = "#17A481";
+        diferencaAtualMedio.style.color = "#fff";
+
+
+
+    } else if (pesoIdealMedio < peso) {
+
+        diferencaAtualMedio.innerHTML = `Você precisa <strong>PERDER</strong> ${diferenca.toFixed(2)} Kg  para atingir o seu peso médio ideal.`;
+
+        diferencaAtualMedio.style.backgroundColor = "#E24E4E";
+        diferencaAtualMedio.style.color = "#fff";
 
     }
 
