@@ -1,6 +1,12 @@
 
 const nome = prompt("Por favor, digite seu nome: ");
-document.getElementById("welcome").innerHTML = `Olá, ${nome}, Seja bem vindo(a)!`;
+
+if (nome == "" || nome == null) {
+    document.getElementById("welcome").innerHTML = `Olá, Ser saudável, Seja bem vindo(a)!`;
+} else {
+    document.getElementById("welcome").innerHTML = `Olá, ${nome}, Seja bem vindo(a)!`;
+}
+
 
 
 // FUNÇÃO CALCULAR IMC - PRINCIPAL
@@ -28,13 +34,27 @@ function calculoImc() {
 
     } else {
 
-        document.getElementById("classificacao-resultado").innerText = "Classificação indisponível.";
+        classificacaoCriancaAdoles();
 
-        document.getElementById("classificacao-resultado").style.backgroundColor = "#F8E551";
+    } 
+
+
+}
+
+
+// CLASSIFICAÇÃO POR FAIXA ETÁRIA - CRIANÇA / ADOLESCENTE
+
+function classificacaoCriancaAdoles() {
+
+    let idade = document.getElementById("idade").value;
+
+    if (idade < 18) {
+
+        limparDescricao();
+        document.querySelector(".desc-crianca-adoles").style.display = "block";
+        document.getElementById("descricao").style.backgroundColor = "#F8E551";
 
     }
-
-
 }
 
 
@@ -163,6 +183,9 @@ function classificacaoIdoso() {
 
 
 function limparDescricao() {
+
+    document.querySelector('.desc-crianca-adoles').style.display = "none";
+
     document.querySelector('.desc-adulto-bp').style.display = "none";
     document.querySelector('.desc-adulto-normal').style.display = "none";
     document.querySelector('.desc-adulto-sp').style.display = "none";
@@ -197,7 +220,26 @@ function pesoIdeal() {
         let pesoIdealMedio = est2 * 21.7;
         let pesoIdealMaximo = est2 * 24.9;
 
+        document.getElementById("pesoMinI").innerHTML = "Peso ideal (mínimo): " + pesoIdealMinimo.toFixed(2) + " kg.";
+
+        document.getElementById("pesoMinI").style.display = "block";
+
+
+        document.getElementById("pesoMedI").innerHTML = "Peso ideal (médio): " + pesoIdealMedio.toFixed(2) + " kg.";
+        document.getElementById("pesoMedI").style.display = "block";
+
+
+        document.getElementById("pesoMaxI").innerHTML = "Peso ideal (máximo): " + pesoIdealMaximo.toFixed(2) + " kg.";
+        document.getElementById("pesoMaxI").style.display = "block";
+
         ganharPerderAdulto();
+
+
+    } else if (idade >= 60) {
+
+        let pesoIdealMinimo = est2 * 23;
+        let pesoIdealMedio = est2 * 25.5;
+        let pesoIdealMaximo = est2 * 27.9;
 
         document.getElementById("pesoMinI").innerHTML = "Peso ideal (mínimo): " + pesoIdealMinimo.toFixed(2) + " kg.";
 
@@ -211,15 +253,16 @@ function pesoIdeal() {
         document.getElementById("pesoMaxI").innerHTML = "Peso ideal (máximo): " + pesoIdealMaximo.toFixed(2) + " kg.";
         document.getElementById("pesoMaxI").style.display = "block";
 
+        ganharPerderIdoso();
 
-    } else if (idade >= 60) {
+    } else {
 
-        let pesoideal = est2 * 25.5;
+        document.getElementById("pesoMinI").style.display = "none";
+        document.getElementById("pesoMedI").style.display = "none";
+        document.getElementById("pesoMaxI").style.display = "none";
+        let diferencaAtualMedio = document.getElementById("diferencaAtualMedio").style.display = "none";
 
-        document.getElementById("pesoMedI").innerHTML = "Peso ideal: " + pesoIdealMedio.toFixed(2) + " kg.";
-
-
-    } 
+    }
 
 
 }
@@ -235,13 +278,14 @@ function ganharPerderAdulto() {
     let pesoIdealMedio = est2 * 21.7;
     let diferenca = Math.abs(pesoIdealMedio - peso);
 
-    var diferencaAtualMedio = document.getElementById("diferencaAtualMedio");
+    let diferencaAtualMedio = document.getElementById("diferencaAtualMedio");
 
 
     if (pesoIdealMedio > peso) {
         
         diferencaAtualMedio.innerHTML = `Você precisa <strong>GANHAR</strong> ${diferenca.toFixed(2)} Kg para atingir o seu peso médio ideal.`;
 
+        diferencaAtualMedio.style.display = "block";
         diferencaAtualMedio.style.backgroundColor = "#17A481";
         diferencaAtualMedio.style.color = "#fff";
 
@@ -251,6 +295,43 @@ function ganharPerderAdulto() {
 
         diferencaAtualMedio.innerHTML = `Você precisa <strong>PERDER</strong> ${diferenca.toFixed(2)} Kg  para atingir o seu peso médio ideal.`;
 
+        diferencaAtualMedio.style.display = "block";
+        diferencaAtualMedio.style.backgroundColor = "#E24E4E";
+        diferencaAtualMedio.style.color = "#fff";
+
+    }
+
+}
+
+function ganharPerderIdoso() {
+
+    let peso = document.getElementById("peso").value;
+
+    let estatura = document.getElementById("est").value;
+   
+    let est2 = estatura ** 2;
+
+    let pesoIdealMedio = est2 * 25.5;
+    let diferenca = Math.abs(pesoIdealMedio - peso);
+
+    let diferencaAtualMedio = document.getElementById("diferencaAtualMedio");
+
+
+    if (pesoIdealMedio > peso) {
+        
+        diferencaAtualMedio.innerHTML = `Você precisa <strong>GANHAR</strong> ${diferenca.toFixed(2)} Kg para atingir o seu peso médio ideal.`;
+
+        diferencaAtualMedio.style.display = "block";
+        diferencaAtualMedio.style.backgroundColor = "#17A481";
+        diferencaAtualMedio.style.color = "#fff";
+
+
+
+    } else if (pesoIdealMedio < peso) {
+
+        diferencaAtualMedio.innerHTML = `Você precisa <strong>PERDER</strong> ${diferenca.toFixed(2)} Kg  para atingir o seu peso médio ideal.`;
+
+        diferencaAtualMedio.style.display = "block";
         diferencaAtualMedio.style.backgroundColor = "#E24E4E";
         diferencaAtualMedio.style.color = "#fff";
 
@@ -258,3 +339,4 @@ function ganharPerderAdulto() {
 
 
 }
+
