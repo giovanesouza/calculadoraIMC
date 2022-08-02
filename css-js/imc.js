@@ -1,11 +1,25 @@
 
-const nome = prompt("Por favor, digite seu nome: ");
 
-if (nome == "" || nome == null) {
-    document.getElementById("welcome").innerHTML = `Olá, Ser saudável, Seja bem vindo(a)!`;
-} else {
-    document.getElementById("welcome").innerHTML = `Olá, ${nome}, Seja bem vindo(a)!`;
-}
+
+setTimeout(function () {
+    const nome = prompt("Por favor, digite seu nome: ");
+
+    if (nome == "" || nome == null) {
+        document.getElementById("welcome").innerHTML = `Olá, Ser saudável, Seja bem vindo(a)!`;
+    } else {
+        document.getElementById("welcome").innerHTML = `Olá, ${nome}, Seja bem vindo(a)!`;
+    }
+
+}, 2000);
+
+
+
+
+  
+
+
+
+
 
 
 
@@ -13,14 +27,14 @@ if (nome == "" || nome == null) {
 
 function calculoImc() {
 
-        let idade = document.getElementById("idade").value;
-    
-        let peso = document.getElementById("peso").value;
-        let estatura = document.getElementById("est").value;
-    
-        let imc = peso / estatura ** 2;
-    
-        let resultado = document.getElementById("resultado").innerHTML = imc.toFixed(2);
+    let idade = document.getElementById("idade").value;
+
+    let peso = document.getElementById("peso").value;
+    let estatura = document.getElementById("est").value;
+
+    let imc = peso / estatura ** 2;
+
+    let resultado = document.getElementById("resultado").innerHTML = imc.toFixed(2);
 
 
     if (idade >= 18 && idade < 60) {
@@ -36,7 +50,7 @@ function calculoImc() {
 
         classificacaoCriancaAdoles();
 
-    } 
+    }
 
 
 }
@@ -272,7 +286,7 @@ function ganharPerderAdulto() {
     let peso = document.getElementById("peso").value;
 
     let estatura = document.getElementById("est").value;
-   
+
     let est2 = estatura ** 2;
 
     let pesoIdealMedio = est2 * 21.7;
@@ -282,7 +296,7 @@ function ganharPerderAdulto() {
 
 
     if (pesoIdealMedio > peso) {
-        
+
         diferencaAtualMedio.innerHTML = `Você precisa <strong>GANHAR</strong> ${diferenca.toFixed(2)} Kg para atingir o seu peso médio ideal.`;
 
         diferencaAtualMedio.style.display = "block";
@@ -308,7 +322,7 @@ function ganharPerderIdoso() {
     let peso = document.getElementById("peso").value;
 
     let estatura = document.getElementById("est").value;
-   
+
     let est2 = estatura ** 2;
 
     let pesoIdealMedio = est2 * 25.5;
@@ -318,7 +332,7 @@ function ganharPerderIdoso() {
 
 
     if (pesoIdealMedio > peso) {
-        
+
         diferencaAtualMedio.innerHTML = `Você precisa <strong>GANHAR</strong> ${diferenca.toFixed(2)} Kg para atingir o seu peso médio ideal.`;
 
         diferencaAtualMedio.style.display = "block";
