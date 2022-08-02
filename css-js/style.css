@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 
 }
 
@@ -15,7 +16,7 @@ html {
 
 
 body {
-    background-color: #212529;
+    /* background-color: #212529; */
     color: #fff;
     font-size: 1.6rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -25,35 +26,37 @@ body {
 /* ÁREA BEM VINDO */
 
 .bem-vindo {
+ 
     background-color: #56D1B5;
-    /* background-color: #17A481; */
     text-align: center;
-    height: 100%;
+    height: 100vh;
+
 }
 
 img {
-    max-width: 80%;
+    width: 550px;
+    max-width: 70%;
 }
 
 .bem-vindo h1 {
-    margin: 20px 0;
+    margin: 2rem 0;
     color: #293746;
 
 }
 
 .bem-vindo p {
-    margin: 10px 15px;
+    margin: 1rem 2rem;
     text-align: center;
-    line-height: 20px;
+    line-height: 2rem;
     color: #293746;
 }
 
 .bem-vindo button {
-    padding: 10px;
-    margin: 40px;
+    padding: 1rem;
+    margin: 4rem 0;
     border: 0;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 1rem;
+    font-size: 1.6rem;
 
 
     cursor: pointer;
@@ -76,16 +79,18 @@ img {
 
 #calculatorImc {
     background-color: #17A481;
-    text-align: center;
-    height: auto;
 
+    height: 65vh;
     display: flex;
+
+    position: relative;
 
 }
 
 
 .col-left {
     width: 50%;
+    text-align: center;
 }
 
 .col-right {
@@ -100,7 +105,6 @@ img {
 
 
 
-
 form {
     /* background-color: #465F59; */
     width: 100%;
@@ -112,17 +116,18 @@ form {
 }
 
 form h2 {
-    margin: 15px;
+    margin: 1.5rem;
 }
 
 input {
     width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 8px;
+    margin-bottom: 0.5rem;
     text-align: center;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: bold;
     outline: none;
+    border: 1px solid #56D1B5;
 
 }
 
@@ -131,11 +136,11 @@ input {
     background-color: #19A37F;
     color: #fff;
 
+    font-size: 1.6rem;
 
-    font-size: 16px;
-
+    margin: 1rem 0;
     border: 1px solid;
-    border-radius: 10px;
+    border-radius: 1rem;
     cursor: pointer;
     transition: all .2s;
 }
@@ -151,11 +156,11 @@ input {
 .reset {
     background-color: #E24E4E;
     border: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     cursor: pointer;
     color: #fff;
 
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .reset:hover {
@@ -171,7 +176,7 @@ input {
 .resultado {
     /* background-color: #56D1B5; */
     width: 100%;
-    margin-top: 15px;
+    margin-top: 1.5rem;
 
     display: flex;
     flex-direction: column;
@@ -191,8 +196,8 @@ input {
     color: #212529;
     font-weight: bold;
     width: 80%;
-    padding: 10px;
-    margin-bottom: 5%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 #resultado::after {
@@ -242,11 +247,28 @@ input {
 .desc-idoso-bp,
 .desc-idoso-normal,
 .desc-idoso-sp,
-.desc-idoso-ob {
+.desc-idoso-ob,
+.desc-crianca-adoles {
 
     display: none;
+    animation: classificacao normal .5s;
+    line-height: 2.5rem;
 
 
+}
+
+@keyframes classificacao {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .desc-adulto-obII,
@@ -254,7 +276,24 @@ input {
     color: #fff;
 }
 
+/* CLASSIFICAÇÃO CRIANÇA E ADOLESCENTE */
 
+.desc-crianca-adoles a {
+    color: #18916E;
+    font-weight: bolder;
+    transition: all .2s;
+}
+
+.desc-crianca-adoles a:hover {
+    background-color: #fff;
+    font-weight: bolder;
+}
+
+
+/* FONTES IMC - CONSULTA */
+.fonte {
+    margin-top: 1.6rem;
+}
 
 /* FIM - TEXTOS DESCRIÇÃO POR CLASSIFICACAÇÃO */
 
@@ -271,6 +310,7 @@ input {
     background-color: #ffffff;
     color: #212529;
 
+    height: 35vh;
 
     display: flex;
 
@@ -279,13 +319,13 @@ input {
 
 .col-left-ideal {
     width: 50%;
-    margin: 15px;
+    margin: 1.5rem;
     text-align: center;
 }
 
 .text-justify {
-    margin: 15px;
-    padding: 10px;
+    margin: 1.5rem;
+    padding: 1rem;
     text-align: justify;
 }
 
@@ -315,21 +355,20 @@ input {
     display: none;
 }
 
-#alerta {
-    background-color: #ffff00;
-    color: #292921;
-}
 
 #pesoMinI {
     background-color: #6DB5E8;
+    animation: classificacao normal .1s;
 }
 
 #pesoMedI {
     background-color: #7FC494;
+    animation: classificacao backwards .3s;
 }
 
 #pesoMaxI {
     background-color: #F8E551;
+    animation: classificacao forwards .5s;
 }
 
 
@@ -338,22 +377,76 @@ button.verificar_PI {
 
     font-weight: bold;
     border: 1px solid;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 15px 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1.5rem 0;
 
     transition: all .2s;
 }
 
 button.verificar_PI:hover {
-    background-color: #465F59;
+    background-color: #19A37F;
     color: #fff;
-    font-weight: bold;
+    font-weight: bolder;
     cursor: pointer;
 }
 
 
 /* FIM ÁREA PESO IDEAL */
+
+/* CONTATO */
+
+
+
+section.contato {
+
+    /* background-color: #fff; */
+    display: flex;
+
+    margin-top: 2rem;
+    padding: 1rem;
+    /* border: 0.2rem solid #fff; */
+    position: absolute;
+    bottom: 2.5rem;
+
+}
+
+i {
+    font-size: 3rem;
+}
+
+
+.repositorio a {
+    display: flex;
+
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.linkedin a {
+    display: flex;
+
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.repositorio a:hover {
+    background-color: #212529;
+    color: #fff;
+    transition: all .2s;
+}
+
+.linkedin a:hover {
+    background-color: #fff;
+    color: #0077B5;
+    padding: 1rem;
+    transition: all .2s;
+}
+
 
 
 
@@ -361,85 +454,94 @@ button.verificar_PI:hover {
 @media only screen and (max-width: 600px) {
 
 
+html {
 
- html {
-    
     font-size: 55%;
 
 }
 
 
-
-
 /* ÁREA BEM-VINDO */
-    .bem-vindo {
-        height: 100vh;
+.bem-vindo {
+    height: 100vh;
 
-    }
-    
-    .bem-vindo p {
-        margin: 10px 20px;
-        text-align: justify;
+}
 
-    }
+.bem-vindo p {
+    /* margin: 10px 20px; */
+    text-align: justify;
+
+}
 
 
-    /* INÍCIO CALCULADORA IMC E CLASSIFICAÇÃO */
+/* INÍCIO CALCULADORA IMC E CLASSIFICAÇÃO */
 
-    #calculatorImc {
+#calculatorImc {
 
-        display: flex;
-        flex-direction: column;
+display: flex;
+flex-direction: column;
 
-        height: 100vh;
+height: 100vh;
 
-    }
+}
 
-    .col-left {
+.col-left {
         width: 100%;
-    }
+}
 
-    .col-right {
+.col-right {
 
-        width: 100%;
+    width: 100%;
 
-        margin-bottom: 15px;
 
-    }
+}
 
     /* FIM CALCULADORA IMC E CLASSIFICAÇÃO */
 
 
 
-/* PESO IDEAL */
+/* LINKEDIN E GITHUB */
+section.contato {
+    bottom: 1rem;
+    
+}
+
+
+    /* PESO IDEAL */
 
 #calculatorPesoIdeal {
 
     display: flex;
     flex-direction: column;
 
-}
-
-.col-left-ideal {
-    width: 90%;
-    margin: 10px;
-}
-
-.col-right-ideal {
-    width: 90%;
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: row;
-
+    height: auto;
 
 }
 
+    .col-left-ideal {
+        width: 90%;
+        margin: 10px;
+    }
 
-.text-justify {
-    margin: 0;
-    text-align: justify;
-}
+    .col-right-ideal {
+        width: 100%;
+       margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+
+    #diferencaAtualMedio {
+        margin-bottom: 2rem;
+    }
+
+    .text-justify {
+        margin: 0;
+        text-align: justify;
+    }
 
 
 
