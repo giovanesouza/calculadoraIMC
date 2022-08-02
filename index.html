@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css-js/style.css">
 
     <title> Calculadora IMC </title>
@@ -16,7 +19,7 @@
 
     <section class="bem-vindo">
 
-            <img src="img/imc.png" alt="img-top-imc">
+        <img src="img/imc.png" alt="img-top-imc">
 
         <h1 id="welcome">Olá, nome. Seja bem vindo(a)!</h1>
 
@@ -27,7 +30,13 @@
                 indivíduo está
                 com peso adequado ou não.</strong></p>
 
+        <p> Nesta mesma página, além do IMC, você também poderá verificar qual é o seu <strong>PESO IDEAL</strong> e ter
+            uma noção de <strong>quantos quilos
+                precisa ganhar ou perder</strong>.</p>
+
         <a href="#calculatorImc"> <button>Clique aqui para começar</button> </a>
+
+
 
 
     </section>
@@ -38,7 +47,7 @@
 
         <div class="col-left">
 
-            <form action="">
+            <form>
 
                 <h2> CALCULADORA DE IMC </h2>
 
@@ -49,7 +58,7 @@
                 <input type="text" id="est" placeholder="Digite sua estatura (m)" minlength="3" maxlength="4"
                     required="">
 
-                <input class="calcular" onclick="calculoImc()" type="submit" value="CALCULAR">
+                <input type="button" class="calcular" onclick="calculoImc()" type="submit" value="CALCULAR">
 
                 <input class="reset" type="reset" value="LIMPAR DADOS">
 
@@ -87,10 +96,10 @@
 
                 <div class="desc-adulto-normal">
                     <p>
-                        Mediante resultado de IMC, você encontra-se em <strong> EUTROFIA (PESO ADEQUADO PARA SUA
-                            ALTURA)</strong>, podendo ter <strong>risco de doença NORMAL</strong>.
+                        Mediante resultado de IMC, você encontra-se em <strong> EUTROFIA (ADEQUADO)</strong>, podendo
+                        ter <strong>risco de doença NORMAL</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> World Health Organization.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
                 </div>
 
                 <div class="desc-adulto-sp">
@@ -169,9 +178,59 @@
                     <p class="fonte"><strong>Fonte:</strong> OPAS (2002).</p>
                 </div>
 
+                <!-- FIM IDOSO -->
+
+
+
+                <!-- INÍCIO CRIANÇA / ADOLESCENTE -->
+
+                <div class="desc-crianca-adoles">
+                    <p>
+                        O método de avaliação para idade selecionada é outro. <strong>Acesse:</strong>
+                        <a href="https://aps.saude.gov.br/ape/vigilanciaalimentar/curvascrescimento" target="_blank">Curvas de crescimento.</a>
+                    </p>
+                    <p class="fonte"><strong>Fonte:</strong> Ministério da Saúde.</p>
+                </div>
+
+                <!-- FIM CRIANÇA / ADOLESCENTE -->
+
+
 
             </div>
-            <!-- FIM IDOSO -->
+
+
+
+
+
+
+
+            <!-- CONTATO -->
+
+            <section class="contato">
+
+                <div class="repositorio">
+
+                    <a href="https://github.com/giovanesouza/calculadoraIMC" target="_blank">
+
+                        <i class="ri-github-fill"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div class="linkedin">
+
+                    <a href="https://www.linkedin.com/in/developergiovanesouza/" target="_blank">
+
+                        <i class="ri-linkedin-fill"></i>
+
+                    </a>
+
+                </div>
+
+
+            </section>
 
 
 
