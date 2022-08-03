@@ -9,7 +9,7 @@
     <!-- ICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css-js/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title> Calculadora IMC </title>
 
@@ -53,16 +53,18 @@
 
                 <h2> CALCULADORA DE IMC </h2>
 
-                <input type="text" id="idade" placeholder="Digite sua idade (anos)" minlength="2" maxlength="3"
-                    required>
-                <input type="text" id="peso" placeholder="Digite seu peso atual (kg)" minlength="2" maxlength="5"
+                <input type="number" id="idade" placeholder="Digite sua idade (anos)" min="1" required>
+
+                <input type="number" id="peso" placeholder="Digite seu peso atual (kg)" min="1" step="0.1" required="">
+
+                <input type="number" id="est" min="1" max="2.5" step="0.1" placeholder="Digite sua estatura (m)"
                     required="">
-                <input type="text" id="est" placeholder="Digite sua estatura (m)" minlength="3" maxlength="4"
-                    required="">
+
+                <div id="verificarCamposImc">Oi</div>
 
                 <input class="calcular" onclick="calculoImc()" type="button" value="CALCULAR">
 
-                <input class="reset" type="reset" value="LIMPAR DADOS">
+                <input class="reset" onclick="removerValidadorImc()" type="reset" value="LIMPAR DADOS">
 
             </form>
 
@@ -81,13 +83,13 @@
 
         <div class="col-right">
 
-            <div class="classificacao"> <strong> CLASSIFICAÇÃO: </strong> </div>
+            <div class="classificacao"> <strong>CLASSIFICAÇÃO: </strong></div>
 
             <!-- DESCRIÇÃO DO RESULTADO - ADULTO / IDOSO -->
             <div id="descricao">
 
 
-                
+
                 <!-- INÍCIO CRIANÇA / ADOLESCENTE -->
 
                 <div class="desc-crianca-adoles">
@@ -281,7 +283,7 @@
 
 
 
-    <script src="css-js/imc.js"></script>
+    <script src="js/imc.js"></script>
 </body>
 
 </html>
