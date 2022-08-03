@@ -1,6 +1,4 @@
 
-
-
 setTimeout(function () {
     const nome = prompt("Por favor, digite seu nome: ");
 
@@ -11,13 +9,6 @@ setTimeout(function () {
     }
 
 }, 2000);
-
-
-
-
-  
-
-
 
 
 
@@ -36,8 +27,11 @@ function calculoImc() {
 
     let resultado = document.getElementById("resultado").innerHTML = imc.toFixed(2);
 
+    if (idade < 18) {
 
-    if (idade >= 18 && idade < 60) {
+        classificacaoCriancaAdoles();
+
+    } else if (idade >= 18 && idade < 60) {
 
         classificacaoAdulto();
 
@@ -45,13 +39,7 @@ function calculoImc() {
 
         classificacaoIdoso();
 
-
-    } else {
-
-        classificacaoCriancaAdoles();
-
     }
-
 
 }
 

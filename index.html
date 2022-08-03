@@ -30,9 +30,11 @@
                 indivíduo está
                 com peso adequado ou não.</strong></p>
 
-        <p> Nesta mesma página, além do IMC, você também poderá verificar qual é o seu <strong>PESO IDEAL</strong> e ter
+        <p> Nesta mesma página, além do IMC, você também poderá verificar qual é o seu
+            <strong>PESO IDEAL</strong> e ter
             uma noção de <strong>quantos quilos
-                precisa ganhar ou perder</strong>.</p>
+                precisa ganhar ou perder</strong>.
+        </p>
 
         <a href="#calculatorImc"> <button>Clique aqui para começar</button> </a>
 
@@ -58,7 +60,7 @@
                 <input type="text" id="est" placeholder="Digite sua estatura (m)" minlength="3" maxlength="4"
                     required="">
 
-                <input type="button" class="calcular" onclick="calculoImc()" type="submit" value="CALCULAR">
+                <input class="calcular" onclick="calculoImc()" type="button" value="CALCULAR">
 
                 <input class="reset" type="reset" value="LIMPAR DADOS">
 
@@ -84,6 +86,23 @@
             <!-- DESCRIÇÃO DO RESULTADO - ADULTO / IDOSO -->
             <div id="descricao">
 
+
+                
+                <!-- INÍCIO CRIANÇA / ADOLESCENTE -->
+
+                <div class="desc-crianca-adoles">
+                    <p>
+                        O método de avaliação para idade selecionada é outro. <strong>Acesse:</strong>
+                        <a href="https://aps.saude.gov.br/ape/vigilanciaalimentar/curvascrescimento"
+                            target="_blank">Curvas de crescimento.</a>
+                    </p>
+                    <p class="fonte"><strong>Fonte:</strong> Ministério da Saúde.</p>
+                </div>
+
+                <!-- FIM CRIANÇA / ADOLESCENTE -->
+
+
+
                 <!-- INÍCIO DULTO -->
                 <div class="desc-adulto-bp">
                     <p>
@@ -91,7 +110,7 @@
                         <strong>
                             risco de doença NORMAL ou ELEVADO</strong> - a depender do grau de magreza.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1997.</p>
                 </div>
 
                 <div class="desc-adulto-normal">
@@ -99,7 +118,7 @@
                         Mediante resultado de IMC, você encontra-se em <strong> EUTROFIA (ADEQUADO)</strong>, podendo
                         ter <strong>risco de doença NORMAL</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1997.</p>
                 </div>
 
                 <div class="desc-adulto-sp">
@@ -108,7 +127,7 @@
                         de
                         <strong> doença POUCO ELEVADO</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1997.</p>
                 </div>
 
                 <div class="desc-adulto-obI">
@@ -117,7 +136,7 @@
                         <strong>risco de
                             doença ELEVADO</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1997.</p>
                 </div>
 
                 <div class="desc-adulto-obII">
@@ -125,7 +144,7 @@
                         Mediante resultado de IMC, você encontra-se em <strong> OBESIDADE GRAU II, </strong> podendo ter
                         <strong>risco de doença MUITO ELEVADO</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1997.</p>
                 </div>
 
                 <div class="desc-adulto-morbida">
@@ -137,7 +156,7 @@
                             de
                             doença MUITÍSSIMO ELEVADO</strong>.
                     </p>
-                    <p class="fonte"><strong>Fonte:</strong> OMS, 1995 e 1997.</p>
+                    <p class="fonte"><strong>Fonte:</strong> OMS, 1997.</p>
                 </div>
 
 
@@ -182,55 +201,7 @@
 
 
 
-                <!-- INÍCIO CRIANÇA / ADOLESCENTE -->
-
-                <div class="desc-crianca-adoles">
-                    <p>
-                        O método de avaliação para idade selecionada é outro. <strong>Acesse:</strong>
-                        <a href="https://aps.saude.gov.br/ape/vigilanciaalimentar/curvascrescimento" target="_blank">Curvas de crescimento.</a>
-                    </p>
-                    <p class="fonte"><strong>Fonte:</strong> Ministério da Saúde.</p>
-                </div>
-
-                <!-- FIM CRIANÇA / ADOLESCENTE -->
-
-
-
             </div>
-
-
-
-
-
-
-
-            <!-- CONTATO -->
-
-            <section class="contato">
-
-                <div class="repositorio">
-
-                    <a href="https://github.com/giovanesouza/calculadoraIMC" target="_blank">
-
-                        <i class="ri-github-fill"></i>
-
-                    </a>
-
-                </div>
-
-
-                <div class="linkedin">
-
-                    <a href="https://www.linkedin.com/in/developergiovanesouza/" target="_blank">
-
-                        <i class="ri-linkedin-fill"></i>
-
-                    </a>
-
-                </div>
-
-
-            </section>
 
 
 
@@ -270,114 +241,43 @@
     </section>
 
 
+    <footer>
 
 
+        <!-- CONTATO -->
 
-    <!-- TABELAS COM CLASSIFICAÇÃO - ADULTO / IDOSO
+        <section class="contato">
 
-                    == ADULTO ==
-                <table>
+            <div class="repositorio">
 
-                    <tr">
-                        <th colspan="3">
-                            CLASSIFICAÇÃO - ADULTO
-                        </th>
-                    </tr>
+                <a href="https://github.com/giovanesouza/calculadoraIMC" target="_blank">
 
+                    <i class="ri-github-fill"></i>
 
-                    <tr">
-                        <td> Baixo peso </td>
-                        <td colspan="2"> &#60; 18.5 Kg/m² </td>
+                </a>
 
-                    </tr>
-
-                    <tr>
-                        <td> Eutrofia </td>
-                        <td> 18.5 Kg/m² </td>
-                        <td> 24.9 Kg/m² </td>
-                    </tr>
-
-                    <tr>
-                        <td> Sobrepeso </td>
-                        <td> 25 Kg/m² </td>
-                        <td> 29.9Kg/m² </td>
-                    </tr>
-
-                    <tr>
-                        <td> Obesidade grau 1 </td>
-                        <td> 30 Kg/m² </td>
-                        <td> 34.9Kg/m² </td>
-                    </tr>
-
-                    <tr>
-                        <td> Obesidade grau 2 </td>
-                        <td> 35 Kg/m² </td>
-                        <td> 39.9Kg/m² </td>
-                    </tr>
-
-                    <tr>
-                        <td> Obesidade Mórbida </td>
-                        <td colspan="
-                2"> &#62; 40 Kg/m² </td>
-
-                    </tr>
+            </div>
 
 
-                    <tr>
-                        <td colspan="3"> <strong>Fonte: </strong> WHO (1995), WHO (1997).</td>
-                    </tr>
+            <div class="linkedin">
 
-                </table>
+                <a href="https://www.linkedin.com/in/developergiovanesouza/" target="_blank">
 
+                    <i class="ri-linkedin-fill"></i>
 
+                </a>
 
-
-                == IDOSO ==
-
-                <table>
-
-                    <tr>
-                        <th colspan="3">
-                            CLASSIFICAÇÃO - IDOSO
-                        </th>
-                    </tr>
+            </div>
 
 
-                    <tr>
-                        <td> Baixo peso </td>
-                        <td colspan="2"> &#60; 23 Kg/m² </td>
-
-                    </tr>
+        </section>
 
 
-
-                    <tr>
-                        <td> Peso Normal </td>
-                        <td> 23 Kg/m² </td>
-                        <td> &#60; 28 Kg/m² </td>
-                    </tr>
-
-                    <tr>
-                        <td> Sobrepeso </td>
-                        <td> &ge; 28 Kg/m² </td>
-                        <td> &#60; 30 kg/m² </td>
-                    </tr>
-
-                    <tr>
-                        <td> Obesidade </td>
-                        <td colspan="
-                2"> &ge; 30 Kg/m² </td>
-
-                    </tr>
+        <p> &copy 2022 - Developer Giovane Souza. </p>
 
 
-                    <tr>
-                        <td colspan="3"> <strong>Fonte: </strong> OPAS (2002). </td>
-                    </tr>
+    </footer>
 
-                </table>
-
- -->
 
 
 

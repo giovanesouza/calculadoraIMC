@@ -26,7 +26,7 @@ body {
 /* ÁREA BEM VINDO */
 
 .bem-vindo {
- 
+
     background-color: #56D1B5;
     text-align: center;
     height: 100vh;
@@ -34,12 +34,12 @@ body {
 }
 
 img {
-    width: 550px;
+    width: 500px;
     max-width: 70%;
 }
 
 .bem-vindo h1 {
-    margin: 2rem 0;
+    margin: 1rem 0;
     color: #293746;
 
 }
@@ -53,7 +53,7 @@ img {
 
 .bem-vindo button {
     padding: 1rem;
-    margin: 4rem 0;
+    margin: 3rem 0;
     border: 0;
     border-radius: 1rem;
     font-size: 1.6rem;
@@ -83,7 +83,6 @@ img {
     height: 65vh;
     display: flex;
 
-    position: relative;
 
 }
 
@@ -238,6 +237,7 @@ input {
 
 /* INÍCIO - TEXTOS DESCRIÇÃO POR CLASSIFICACAÇÃO */
 
+.desc-crianca-adoles,
 .desc-adulto-bp,
 .desc-adulto-normal,
 .desc-adulto-sp,
@@ -247,8 +247,7 @@ input {
 .desc-idoso-bp,
 .desc-idoso-normal,
 .desc-idoso-sp,
-.desc-idoso-ob,
-.desc-crianca-adoles {
+.desc-idoso-ob {
 
     display: none;
     animation: classificacao normal .5s;
@@ -394,25 +393,34 @@ button.verificar_PI:hover {
 
 /* FIM ÁREA PESO IDEAL */
 
+
+
+
+/* RODAPÉ */
+
+footer {
+    background-color: #18916E;
+    text-align: center;
+}
+
+footer p {
+    padding: 1rem;
+
+}
+
+
 /* CONTATO */
-
-
 
 section.contato {
 
-    /* background-color: #fff; */
     display: flex;
-
-    margin-top: 2rem;
-    padding: 1rem;
-    /* border: 0.2rem solid #fff; */
-    position: absolute;
-    bottom: 2.5rem;
+    justify-content: center;
+    padding: 1rem 0 0 0;
 
 }
 
 i {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 
@@ -423,6 +431,8 @@ i {
     border-radius: 50%;
     font-weight: bold;
     padding: 1rem;
+
+    transition: all .2s;
 }
 
 .linkedin a {
@@ -432,91 +442,110 @@ i {
     border-radius: 50%;
     font-weight: bold;
     padding: 1rem;
+
+    transition: all .2s;
 }
 
 .repositorio a:hover {
     background-color: #212529;
     color: #fff;
-    transition: all .2s;
+
 }
 
 .linkedin a:hover {
     background-color: #fff;
     color: #0077B5;
-    padding: 1rem;
-    transition: all .2s;
+
 }
 
-
+/* FIM RODAPÉ */
 
 
 
 @media only screen and (max-width: 600px) {
 
 
-html {
+    html {
 
-    font-size: 55%;
+        font-size: 55%;
 
-}
-
-
-/* ÁREA BEM-VINDO */
-.bem-vindo {
-    height: 100vh;
-
-}
-
-.bem-vindo p {
-    /* margin: 10px 20px; */
-    text-align: justify;
-
-}
+    }
 
 
-/* INÍCIO CALCULADORA IMC E CLASSIFICAÇÃO */
+    /* ÁREA BEM-VINDO */
+    .bem-vindo {
 
-#calculatorImc {
+        height: fit-content;
 
-display: flex;
-flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-height: 100vh;
+    }
 
-}
+    .bem-vindo p {
+        margin: 10px 20px;
+        text-align: justify;
 
-.col-left {
+    }
+
+    .bem-vindo button {
+        display: none;
+
+
+    }
+
+
+    /* INÍCIO CALCULADORA IMC E CLASSIFICAÇÃO */
+
+    #calculatorImc {
+
+        display: flex;
+        flex-direction: column;
+
+        height: auto;
+
+    }
+
+    #descricao {
+
+        margin-bottom: 2rem;
+
+    }
+
+    .col-left {
         width: 100%;
-}
+    }
 
-.col-right {
+    .col-right {
 
-    width: 100%;
+        width: 100%;
 
 
-}
+    }
 
     /* FIM CALCULADORA IMC E CLASSIFICAÇÃO */
 
 
 
-/* LINKEDIN E GITHUB */
-section.contato {
-    bottom: 1rem;
-    
-}
+    /* LINKEDIN E GITHUB */
+    section.contato {
+        bottom: 1rem;
+
+    }
 
 
     /* PESO IDEAL */
 
-#calculatorPesoIdeal {
+    #calculatorPesoIdeal {
 
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
 
-    height: auto;
+        height: auto;
 
-}
+    }
 
     .col-left-ideal {
         width: 90%;
@@ -525,7 +554,7 @@ section.contato {
 
     .col-right-ideal {
         width: 100%;
-       margin: 0 auto;
+        margin: 0 auto;
 
         display: flex;
         flex-direction: column;
