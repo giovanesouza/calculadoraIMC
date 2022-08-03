@@ -1,14 +1,14 @@
 
-// setTimeout(function () {
-//     const nome = prompt("Por favor, digite seu nome: ");
+setTimeout(function () {
+    const nome = prompt("Por favor, digite seu nome: ");
 
-//     if (nome == "" || nome == null) {
-//         document.getElementById("welcome").innerHTML = `Olá, Ser saudável, Seja bem vindo(a)!`;
-//     } else {
-//         document.getElementById("welcome").innerHTML = `Olá, ${nome}, Seja bem vindo(a)!`;
-//     }
+    if (nome == "" || nome == null) {
+        document.getElementById("welcome").innerHTML = `Olá, Ser saudável, Seja bem vindo(a)!`;
+    } else {
+        document.getElementById("welcome").innerHTML = `Olá, ${nome}, Seja bem vindo(a)!`;
+    }
 
-// }, 2000);
+}, 2000);
 
 
 function verificarCamposIMC() {
