@@ -280,7 +280,7 @@ function pesoIdeal() {
 
         let pesoIdealMinimo = est2 * 18.5;
         let pesoIdealMedio = est2 * 21.7;
-        let pesoIdealMaximo = est2 * 24.9;
+        let pesoIdealMaximo = est2 * 24.99;
 
         document.getElementById("pesoMinI").innerHTML = "Peso ideal (mínimo): " + pesoIdealMinimo.toFixed(2) + " kg.";
 
@@ -301,7 +301,7 @@ function pesoIdeal() {
 
         let pesoIdealMinimo = est2 * 23;
         let pesoIdealMedio = est2 * 25.5;
-        let pesoIdealMaximo = est2 * 27.9;
+        let pesoIdealMaximo = est2 * 27.99;
 
         document.getElementById("pesoMinI").innerHTML = "Peso ideal (mínimo): " + pesoIdealMinimo.toFixed(2) + " kg.";
 
