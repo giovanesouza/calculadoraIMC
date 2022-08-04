@@ -24,26 +24,33 @@ function verificarCamposIMC() {
 
         validadorImc.style.display = "block";
         validadorImc.innerHTML = "&#10008; Necessário preencher o campo IDADE!";
+
+        document.getElementById("resultado").innerHTML = "0.00";
         document.getElementById("descricao").style.visibility = "hidden";
 
     } else if (peso == "") {
 
+        validadorImc.style.display = "block";
         validadorImc.innerHTML = "&#10008; Necessário preencher o campo PESO!";
+
+        document.getElementById("resultado").innerHTML = "0.00";
         document.getElementById("descricao").style.visibility = "hidden";
 
 
     } else if (estatura == "") {
 
+        validadorImc.style.display = "block";
         validadorImc.innerHTML = "&#10008; Necessário preencher o campo ESTATURA!";
+
+        document.getElementById("resultado").innerHTML = "0.00";
         document.getElementById("descricao").style.visibility = "hidden";
 
 
     } else {
         validadorImc.style.display = "none";
         document.getElementById("descricao").style.visibility = "visible";
+     }
 
-    }
-    
 
 }
 
@@ -51,7 +58,8 @@ function removerValidadorImc() {
 
     let validadorImc = document.getElementById("verificarCamposImc");
     validadorImc.style.display = "none";
-    let resultado = document.getElementById("resultado").innerHTML = "0.00";
+    
+    document.getElementById("resultado").innerHTML = "0.00";
     document.getElementById("descricao").style.visibility = "hidden";
     document.querySelector(".classificacao").innerHTML = "<strong>CLASSIFICAÇÃO:</strong>";
 
@@ -261,7 +269,7 @@ function limparDescricao() {
 function pesoIdeal() {
 
     let idade = document.getElementById("idade").value;
-
+    let peso = document.getElementById("peso").value;
     let estatura = document.getElementById("est").value;
 
     let est2 = estatura ** 2;
@@ -289,7 +297,7 @@ function pesoIdeal() {
         ganharPerderAdulto();
 
 
-    } else if (idade >= 60  && estatura !== "") {
+    } else if (idade >= 60 && estatura !== "") {
 
         let pesoIdealMinimo = est2 * 23;
         let pesoIdealMedio = est2 * 25.5;
@@ -309,12 +317,14 @@ function pesoIdeal() {
 
         ganharPerderIdoso();
 
-    } else {
+    }
+
+    else {
 
         document.getElementById("pesoMinI").style.display = "none";
         document.getElementById("pesoMedI").style.display = "none";
         document.getElementById("pesoMaxI").style.display = "none";
-        let diferencaAtualMedio = document.getElementById("diferencaAtualMedio").style.display = "none";
+        document.getElementById("diferencaAtualMedio").style.visibility = "hidden";
 
     }
 
@@ -339,20 +349,22 @@ function ganharPerderAdulto() {
 
         diferencaAtualMedio.innerHTML = `Você precisa <strong>GANHAR</strong> ${diferenca.toFixed(2)} Kg para atingir o seu peso médio ideal.`;
 
-        diferencaAtualMedio.style.display = "block";
+        diferencaAtualMedio.style.visibility = "visible";
         diferencaAtualMedio.style.backgroundColor = "#17A481";
         diferencaAtualMedio.style.color = "#fff";
 
 
 
-    } else if (pesoIdealMedio < peso) {
+    } else if (pesoIdealMedio < peso && peso !== "") {
 
         diferencaAtualMedio.innerHTML = `Você precisa <strong>PERDER</strong> ${diferenca.toFixed(2)} Kg  para atingir o seu peso médio ideal.`;
 
-        diferencaAtualMedio.style.display = "block";
+        diferencaAtualMedio.style.visibility = "visible";
         diferencaAtualMedio.style.backgroundColor = "#E24E4E";
         diferencaAtualMedio.style.color = "#fff";
 
+    } else {
+        diferencaAtualMedio.style.visibility = "hidden";
     }
 
 }
@@ -371,24 +383,26 @@ function ganharPerderIdoso() {
     let diferencaAtualMedio = document.getElementById("diferencaAtualMedio");
 
 
-    if (pesoIdealMedio > peso) {
+    if (pesoIdealMedio > peso && peso !== "") {
 
         diferencaAtualMedio.innerHTML = `Você precisa <strong>GANHAR</strong> ${diferenca.toFixed(2)} Kg para atingir o seu peso médio ideal.`;
 
-        diferencaAtualMedio.style.display = "block";
+        diferencaAtualMedio.style.visibility = "visible";
         diferencaAtualMedio.style.backgroundColor = "#17A481";
         diferencaAtualMedio.style.color = "#fff";
 
 
 
-    } else if (pesoIdealMedio < peso) {
+    } else if (pesoIdealMedio < peso && peso !== "") {
 
         diferencaAtualMedio.innerHTML = `Você precisa <strong>PERDER</strong> ${diferenca.toFixed(2)} Kg  para atingir o seu peso médio ideal.`;
 
-        diferencaAtualMedio.style.display = "block";
+        diferencaAtualMedio.style.visibility = "visible";
         diferencaAtualMedio.style.backgroundColor = "#E24E4E";
         diferencaAtualMedio.style.color = "#fff";
 
+    } else {
+        diferencaAtualMedio.style.visibility = "hidden";
     }
 
 
