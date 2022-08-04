@@ -355,7 +355,8 @@ input {
 #pesoMinI,
 #pesoMedI,
 #pesoMaxI,
-#diferencaAtualMedio {
+#diferencaAtualMedio
+ {
     height: auto;
     width: 80%;
     padding: 1rem;
@@ -365,9 +366,18 @@ input {
 
     font-weight: bold;
 
+}
+
+#pesoMinI,
+#pesoMedI,
+#pesoMaxI
+ {
     display: none;
 }
 
+#diferencaAtualMedio {
+    visibility: hidden;
+}
 
 #pesoMinI {
     background-color: #6DB5E8;
