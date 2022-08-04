@@ -268,7 +268,7 @@ function pesoIdeal() {
 
 
 
-    if (idade >= 18 && idade < 60) {
+    if (idade >= 18 && idade < 60 && estatura !== "") {
 
         let pesoIdealMinimo = est2 * 18.5;
         let pesoIdealMedio = est2 * 21.7;
@@ -289,7 +289,7 @@ function pesoIdeal() {
         ganharPerderAdulto();
 
 
-    } else if (idade >= 60) {
+    } else if (idade >= 60  && estatura !== "") {
 
         let pesoIdealMinimo = est2 * 23;
         let pesoIdealMedio = est2 * 25.5;
@@ -335,7 +335,7 @@ function ganharPerderAdulto() {
     let diferencaAtualMedio = document.getElementById("diferencaAtualMedio");
 
 
-    if (pesoIdealMedio > peso) {
+    if (pesoIdealMedio > peso && peso !== "") {
 
         diferencaAtualMedio.innerHTML = `Você precisa <strong>GANHAR</strong> ${diferenca.toFixed(2)} Kg para atingir o seu peso médio ideal.`;
 
